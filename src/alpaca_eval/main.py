@@ -175,7 +175,7 @@ def evaluate(
         is_cache_leaderboard = max_instances is None
 
     if is_cache_leaderboard:
-        if isinstance(precomputed_leaderboard, AnyPath):
+        if True:
             logging.info(f"Saving result to the precomputed leaderboard at {precomputed_leaderboard}")
             df_leaderboard.to_csv(precomputed_leaderboard)
         else:
