@@ -4,6 +4,12 @@
 [![Data License](https://img.shields.io/badge/Data%20License-CC%20By%20NC%204.0-red.svg)](https://github.com/tatsu-lab/alpaca_farm/blob/main/DATA_LICENSE)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/release/python-3100/)
 [![discord](https://img.shields.io/badge/discord-server-blue?logo=discord&logoColor=white)](https://discord.gg/GJMxJSVZZM)
+**Yankai's Changes to this repo:** 1.change the setup.py, delete the Python 3.10 requirement. 2. change main.py line 178 to be: if True
+
+**How to test the leader board:** 
+1. pip install -e .
+2. export OPENAI_API_KEY=<your_api_key>
+3. run: alpaca_eval evaluate --model_outputs="/home/jiang.yank/work/alpaca_eval/results/gpt4/model_outputs.json" --reference_outputs="home/jiang.yank/work/alpaca_eval/results/gpt4_turbo/model_outputs.json"  --annotators_config=gpt4_turbo
 
 :tada: **AlpacaEval 2.0** is out and used by default! We improved the auto-annotator (better and cheaper) and use GPT-4 turbo as baseline. More details [here](#alpacaeval-20). For the old version, set your environment variable `IS_ALPACA_EVAL_2=False`.
 
