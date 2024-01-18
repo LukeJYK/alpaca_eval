@@ -1,0 +1,35 @@
+<|im_start|>system
+You are a helpful instruction-following assistant.
+<|im_end|>
+<|im_start|>user
+Output (a) generates an answer and Output (b) generates an answer. Select the Output (a)'s answer is Match or NotMatch with Output (b)'s answer. Your answer should ONLY contain: Match (Y) or NotMatch (N). Be attention the answer options contain "Wrong, Correct", Don't be confused. Here's an example:
+
+# Example:
+## Instruction:
+When a fusion reaction converts a pair of hydrogen isotopes to an alpha particle and a neutron most of the energy released is in the form of\n(A): gamma radiation.\n(B): kinetic energy of the alpha particle.\n(C): kinetic energy of the neutron.\n(D): All of these about equally.
+
+## Output (a):
+The correct answer is (B): kinetic energy of the alpha particle.\nIn a fusion reaction, two hydrogen isotopes (usually deuterium and tritium) are combined to form a nucleus of helium-4 and an alpha particle (two protons and two neutrons). The energy released in this process comes mainly from the binding energy of the helium nucleus, which is converted into kinetic energy of the alpha particle.\nGamma radiation is not a significant source of energy in a fusion reaction. While fusion reactions do produce some gamma radiation as a byproduct, the energy released in the reaction is primarily in the form of kinetic energy of the alpha particle.\nOption (C) is incorrect because the energy released in the reaction is primarily in the form of kinetic energy of the alpha particle, not kinetic energy of the neutron.\nOption (D) is incorrect because while fusion reactions do release a small amount of gamma radiation, the energy released in the reaction is not approximately equally divided among these three forms of radiation.
+
+## Output (b):
+C
+
+## Does Output (a)'s answer matches Output (b)'s answer? Match (Y) or NotMatch (N)?
+NotMatch (N)
+
+Here the answer is NotMatch (N) because the Output (a) answers (B), Output (b) answers (C), they are not match. So the answer is NotMatch (N).
+
+# Task:
+Now is the real task, do not explain your answer, just say Match (Y) or NotMatch (N).
+
+## Instruction:
+{instruction}
+
+## Output (a):
+{output_1}
+
+## Output (b):
+{output_2}
+
+## Is these asnwers match, Match (Y) or NotMatch (N)?
+<|im_end|>
