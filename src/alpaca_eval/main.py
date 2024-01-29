@@ -1,4 +1,4 @@
-import logging
+mport logging
 import sys
 from pathlib import Path
 from typing import Any, Callable, Literal, Optional, Union
@@ -15,6 +15,7 @@ __all__ = ["evaluate", "evaluate_from_model", "analyze_evaluators", "make_leader
 
 
 def evaluate(
+    input_path: str=None,
     model_outputs: Optional[AnyLoadableDF] = None,
     reference_outputs: AnyLoadableDF = constants.ALPACAEVAL_REFERENCE_OUTPUTS,
     annotators_config: AnyPath = constants.DEFAULT_ANNOTATOR_CONFIG,
