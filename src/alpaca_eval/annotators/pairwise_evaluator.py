@@ -37,18 +37,22 @@ PAIRWISE_ADDED_DOCSTRING = """
 
 class PairwiseAnnotatorLocal(BaseAnnotator):
     __doc__ = BaseAnnotator.__doc__.replace("Base class", "Class") + PAIRWISE_ADDED_DOCSTRING
-
+    
     def __init__(
         self,
         *args,
         input_keys: Sequence[str] = ("instruction",),
-        output_keys: Sequence[str] = ("output_1", "output_2"),
+        # output_keys: Sequence[str] = None,
         p_label_flip: Optional[float] = None,
         **kwargs,
     ):
+        # keys =[]
+        # for i in range(BaseAnnotator.get_length()):
+        #     keys.append("output_{}".format(i+1))
         self.input_keys = list(input_keys)
-        self.output_keys = list(output_keys)
-        super().__init__(*args, **kwargs, primary_keys=self.input_keys + self.output_keys)
+        # self.output_keys = keys
+        # super().__init__(*args, **kwargs, primary_keys=self.input_keys + self.output_keys)
+        super().__init__(*args, **kwargs)
         self.p_label_flip = p_label_flip
 
     @property
@@ -154,8 +158,7 @@ class PairwiseAnnotatorLocal(BaseAnnotator):
 
     def annotate_head2head(
         self,
-        outputs_1: Union[Sequence[dict[str, Any]], pd.DataFrame],
-        outputs_2: Union[Sequence[dict[str, Any]], pd.DataFrame],
+        outputs: list,
         keys_to_merge: Optional[Sequence[str]] = None,
         is_ordered: bool = False,
         **decoding_kwargs,
@@ -196,43 +199,37 @@ class PairwiseAnnotatorLocal(BaseAnnotator):
 
         keys_to_merge = list(keys_to_merge)
 
-        outputs_1 = utils.convert_to_dataframe(outputs_1)
-        outputs_2 = utils.convert_to_dataframe(outputs_2)
 
-        if is_ordered:
-            outputs_1 = outputs_1.copy()
-            outputs_2 = outputs_2.copy()
-            outputs_1["tmp_idx"] = range(len(outputs_1))
-            outputs_2["tmp_idx"] = range(len(outputs_1))
-            keys_to_merge += ["tmp_idx"]  # add a temporary index to merge on
+        # if is_ordered:
+        #     outputs_1 = outputs_1.copy()
+        #     outputs_2 = outputs_2.copy()
+        #     outputs_1["tmp_idx"] = range(len(outputs_1))
+        #     outputs_2["tmp_idx"] = range(len(outputs_1))
+        #     keys_to_merge += ["tmp_idx"]  # add a temporary index to merge on
 
         # find all the columns that are in both
-        other_same_cols = [k for k in outputs_1.columns if k in outputs_2 and k not in (keys_to_merge + ["output"])]
+        #other_same_cols = [k for k in outputs_1.columns if k in outputs_2 and k not in (keys_to_merge + ["output"])]
+        other_same_cols = ['generator','dataset']
+        df_to_annotate = utils.merge_multiple_dataframes(outputs, keys_to_merge)
+        
+        # Do we need this?????
+        # for c in other_same_cols:
+        #     # if the columns are the same, we can drop the _2
+        #     if df_to_annotate[c + "_1"].equals(df_to_annotate[c + "_2"]):
+        #         df_to_annotate = df_to_annotate.drop(columns=c + "_2").rename(columns={c + "_1": c})
 
-        df_to_annotate = pd.merge(
-            outputs_1,
-            outputs_2,
-            on=keys_to_merge,
-            suffixes=("_1", "_2"),
-        )
+        # if is_ordered:
+        #     df_to_annotate = df_to_annotate.drop(columns="tmp_idx")
+        # else:
+        #     # if you are taking the cartesian product, you can have undesired duplicates
+        #     df_to_annotate = df_to_annotate.drop_duplicates()
 
-        for c in other_same_cols:
-            # if the columns are the same, we can drop the _2
-            if df_to_annotate[c + "_1"].equals(df_to_annotate[c + "_2"]):
-                df_to_annotate = df_to_annotate.drop(columns=c + "_2").rename(columns={c + "_1": c})
-
-        if is_ordered:
-            df_to_annotate = df_to_annotate.drop(columns="tmp_idx")
-        else:
-            # if you are taking the cartesian product, you can have undesired duplicates
-            df_to_annotate = df_to_annotate.drop_duplicates()
-
-            if not (len(outputs_1) == len(outputs_2) == len(df_to_annotate)):
-                logging.warning(
-                    f"The length of outputs before and after merge are not the same. We have len(outputs_1)=="
-                    f"{len(outputs_1)}, len(outputs_2)=={len(outputs_2)}, and len(df_annotated)=={len(df_to_annotate)}."
-                    f" This means that there are missing examples or duplicates. We are taking a SQL inner join."
-                )
+        #     if not (len(outputs_1) == len(outputs_2) == len(df_to_annotate)):
+        #         logging.warning(
+        #             f"The length of outputs before and after merge are not the same. We have len(outputs_1)=="
+        #             f"{len(outputs_1)}, len(outputs_2)=={len(outputs_2)}, and len(df_annotated)=={len(df_to_annotate)}."
+        #             f" This means that there are missing examples or duplicates. We are taking a SQL inner join."
+        #         )
 
         out = self.__call__(df_to_annotate, **decoding_kwargs)
 
@@ -304,7 +301,7 @@ class PairwiseAnnotatorLocal(BaseAnnotator):
 
         # 2. deals with equality
         idcs_is_same_outputs = df_to_annotate["output_1"] == df_to_annotate["output_2"]
-        df_to_annotate.loc[idcs_is_same_outputs, self.annotation_key] = 1.5
+        df_to_annotate.loc[idcs_is_same_outputs, self.annotation_key] = None
         # for backward compatibility 0 used to mean same output => replace with 1.5
         df_to_annotate[self.annotation_key] = df_to_annotate[self.annotation_key].replace({0: 1.5})
 

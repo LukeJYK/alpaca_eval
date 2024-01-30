@@ -16,8 +16,8 @@ __all__ = ["evaluate", "evaluate_from_model", "analyze_evaluators", "make_leader
 
 def evaluate(
     input_path: str=None,
-    model_outputs: Optional[AnyLoadableDF] = None,
-    reference_outputs: AnyLoadableDF = constants.ALPACAEVAL_REFERENCE_OUTPUTS,
+    # model_outputs: Optional[AnyLoadableDF] = None,
+    # reference_outputs: AnyLoadableDF = constants.ALPACAEVAL_REFERENCE_OUTPUTS,
     annotators_config: AnyPath = constants.DEFAULT_ANNOTATOR_CONFIG,
     name: Optional[str] = None,
     output_path: Optional[Union[AnyPath, str]] = "auto",
@@ -104,55 +104,56 @@ def evaluate(
     annotator_kwargs :
         Additional arguments to pass to `PairwiseAnnotator`.
     """
-    if (
-        isinstance(current_leaderboard_mode, str)
-        and current_leaderboard_mode not in constants.ORDERED_LEADERBOARD_MODES
-    ):
-        raise ValueError(f"current_leaderboard_mode should be one of {constants.ORDERED_LEADERBOARD_MODES}")
+    # if (
+    #     isinstance(current_leaderboard_mode, str)
+    #     and current_leaderboard_mode not in constants.ORDERED_LEADERBOARD_MODES
+    # ):
+    #     raise ValueError(f"current_leaderboard_mode should be one of {constants.ORDERED_LEADERBOARD_MODES}")
 
     annotation_kwargs = annotation_kwargs or dict()
 
-    leaderboard, precomputed_leaderboard = utils.get_precomputed_leaderboard(
-        precomputed_leaderboard, reference_outputs, annotators_config
-    )
+    # leaderboard, precomputed_leaderboard = utils.get_precomputed_leaderboard(
+    #     precomputed_leaderboard, reference_outputs, annotators_config
+    # )
     annotations = None
 
-    arg_model_outputs = model_outputs
-    if model_outputs is not None:
-        model_outputs = utils.load_or_convert_to_dataframe(model_outputs)
-        reference_outputs = utils.load_or_convert_to_dataframe(reference_outputs)
-        name = utils.get_generator_name(name, model_outputs)
+    arg_model_outputs = input_path
+    if input_path is not None:
+        inputs = utils.load_or_convert_to_dataframe(input_path)
+        names = utils.get_generator_name(inputs)
+        print("evaluating the following generators:",names)
+        # if (name not in leaderboard) or is_overwrite_leaderboard:
+        #     logging.info(f"Evaluating the {name} outputs.")
+        #need to fix max_instance function
+        if max_instances is not None:
+            # first we shuffle both outputs with a fix seed => more representative
+            if utils.check_length(inputs)==False:
+                logging.warning(
+                    "model_outputs and reference_outputs have different lengths, so we cannot shuffle before taking the first max_instances."
+                )
+            else:
+                seed = 123
+                model_outputs = model_outputs.sample(frac=1, random_state=seed)
+                reference_outputs = reference_outputs.sample(frac=1, random_state=seed)
 
-        if (name not in leaderboard) or is_overwrite_leaderboard:
-            logging.info(f"Evaluating the {name} outputs.")
-
-            if max_instances is not None:
-                # first we shuffle both outputs with a fix seed => more representative
-                if len(model_outputs) != len(reference_outputs):
-                    logging.warning(
-                        "model_outputs and reference_outputs have different lengths, so we cannot shuffle before taking the first max_instances."
-                    )
-                else:
-                    seed = 123
-                    model_outputs = model_outputs.sample(frac=1, random_state=seed)
-                    reference_outputs = reference_outputs.sample(frac=1, random_state=seed)
-
-                model_outputs = model_outputs[:max_instances]
-                reference_outputs = reference_outputs[:max_instances]
-
-            annotator = Annotator(annotators_config=annotators_config, **annotator_kwargs)
-            annotations = annotator.annotate_head2head(
-                outputs_1=reference_outputs, outputs_2=model_outputs, **annotation_kwargs
+            model_outputs = model_outputs[:max_instances]
+            reference_outputs = reference_outputs[:max_instances]
+        keys =["instruction",]
+        for i in range(len(names)):
+            keys.append("output_{}".format(i+1))
+        annotator = Annotator(annotators_config=annotators_config,primary_keys=keys, **annotator_kwargs)
+        annotations = annotator.annotate_head2head(
+            outputs=inputs, **annotation_kwargs
             )
 
-            if isinstance(fn_metric, str):
-                fn_metric = getattr(metrics, fn_metric)
+        if isinstance(fn_metric, str):
+            fn_metric = getattr(metrics, fn_metric)
 
-            leaderboard[name] = fn_metric(preferences=[a["preference"] for a in annotations])
-            leaderboard[name]["mode"] = current_leaderboard_mode
-            leaderboard[name]["avg_length"] = int(model_outputs["output"].str.len().mean())
-        else:
-            logging.info(f"Skipping evaluation of {name} as it is already in the precomputed leaderboard.")
+        #     leaderboard[name] = fn_metric(preferences=[a["preference"] for a in annotations])
+        #     leaderboard[name]["mode"] = current_leaderboard_mode
+        #     leaderboard[name]["avg_length"] = int(model_outputs["output"].str.len().mean())
+        # else:
+        #     logging.info(f"Skipping evaluation of {name} as it is already in the precomputed leaderboard.")
 
     output_path = utils.get_output_path(output_path, arg_model_outputs, name)
 

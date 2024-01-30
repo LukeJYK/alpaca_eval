@@ -84,7 +84,7 @@ class BaseAnnotator(abc.ABC):
 
     def __init__(
         self,
-        primary_keys: Sequence[str],
+        primary_keys: list[str],
         annotators_config: Union[utils.AnyPath, list[dict[str, Any]]] = "claude",
         seed: Optional[int] = 0,
         is_avoid_reannotations: bool = True,
@@ -97,10 +97,11 @@ class BaseAnnotator(abc.ABC):
         is_reapply_parsing: bool = False,
     ):
         logging.info(f"Creating the annotator from `{annotators_config}`.")
+
         self.base_dir = Path(base_dir or self.DEFAULT_BASE_DIR)
         self.seed = seed
         self.is_avoid_reannotations = is_avoid_reannotations
-        self.primary_keys = list(primary_keys)
+        self.primary_keys = primary_keys
         self.all_keys = self.primary_keys + [self.annotator_column]
         self.other_output_keys_to_keep = list(other_output_keys_to_keep)
         self.other_input_keys_to_keep = list(other_input_keys_to_keep)
@@ -144,6 +145,8 @@ class BaseAnnotator(abc.ABC):
     def annotator_name(self) -> str:
         return Path(self.annotators_config).parent.name
 
+    def get_length(self):
+        return self.length
     def __call__(
         self,
         to_annotate: utils.AnyData,
