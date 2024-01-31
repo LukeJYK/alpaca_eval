@@ -129,7 +129,15 @@ def make_prompts(
 
     if df.empty:
         return [], df
-
+    output_length = df.columns.values.shape[0]-2
+    insert1 = "Output (1)"
+    for i in range(output_length - 1):
+        insert1 = insert1 + " or Output ({})".format(i+2)
+    template = template.replace('"INPUT"', insert1)
+    insert2 = "## Output (1):\n{output_1}"
+    for i in range(output_length - 1):
+        insert2 = insert2 + "\n\n## Output ({}):\n".format(i+2)+ "{output_"+ str(i+2)+"}"
+    template = template.replace('"PATTERN_INPUT"', insert2)
     text_to_format = re.findall(r"{([^ \s]+?)}", template)
     n_occurrences = Counter(text_to_format)
 
@@ -223,6 +231,24 @@ def convert_to_dataframe(data: AnyData) -> pd.DataFrame:
     else:
         # try
         return pd.DataFrame(data)
+import pandas as pd
+
+def merge_multiple_dataframes(inputs, key):
+    if not inputs or len(inputs) < 2:
+        print("Please provide at least two DataFrames for merging.")
+        return None
+    merged_df = inputs[0]
+    merged_df = pd.merge(merged_df, inputs[1], on=key,suffixes=("_1", "_2"))
+    count = 3
+    for input in inputs[2:]:
+        # Assuming you want to perform an inner merge, change how you merge based on your needs
+        merged_df = pd.merge(merged_df, input, on=key)
+        merged_df.rename(columns={'dataset': 'dataset_{}'.format(count)}, inplace=True)
+        merged_df.rename(columns={'output': 'output_{}'.format(count)}, inplace=True)
+        merged_df.rename(columns={'generator': 'generator_{}'.format(count)}, inplace=True)
+        count += 1
+    return merged_df
+
 
 
 def check_imports(modules: Sequence[str], to_use: str = "this fnction"):
@@ -239,41 +265,14 @@ def check_pkg_atleast_version(package, atleast_version):
     return pkg_resources.parse_version(curr_version) > pkg_resources.parse_version(atleast_version)
 
 
-def load_or_convert_to_dataframe(df=Union[AnyPath, AnyData, Callable, list, tuple], **kwargs):
+def load_or_convert_to_dataframe(df, **kwargs):
     """Load a dataframe from a path or convert the input to a dataframe if it's not a path."""
-    if isinstance(df, Callable):
-        df = df(**kwargs)
-
-    if isinstance(df, (tuple, list)) and isinstance(df[0], (str, os.PathLike, pathlib.Path)):
-        df = pd.concat(
-            [load_or_convert_to_dataframe(f, **kwargs) for f in df],
-        )
-
-    if isinstance(df, (str, os.PathLike, pathlib.Path)):
-        df = Path(df)
-
-        # check if it's a globbing pattern
-        if "*" in str(df):
-            df = pd.concat(
-                [load_or_convert_to_dataframe(f, **kwargs) for f in glob.glob(str(df))],
-            )
-        else:
-            suffix = df.suffix
-            if suffix == ".json":
-                df = pd.read_json(df, **kwargs)
-            elif suffix == ".csv":
-                df = pd.read_csv(df, **kwargs)
-                if df.columns[0] == "Unnamed: 0":
-                    df.set_index(df.columns[0], inplace=True)
-                    df.index.name = None
-            elif suffix == ".tsv":
-                df = pd.read_table(df, sep="\t", **kwargs)
-            else:
-                raise ValueError(f"File format {suffix} not supported.")
-    else:
-        df = convert_to_dataframe(df, **kwargs)
-
-    return df
+    files = [f for f in os.listdir(df) if f.endswith('.json')]
+    dataframes = []
+    for file in files:
+        file_path = os.path.join(df, file)
+        dataframes.append(pd.read_json(file_path, **kwargs))
+    return dataframes
 
 
 class Timer:
@@ -437,16 +436,27 @@ def print_leaderboard(df_leaderboard, leaderboard_mode, cols_to_print, current_n
     print(df_leaderboard[cols_to_print].to_string(float_format="%.2f"))
 
 
-def get_generator_name(name, model_outputs):
-    if name is None:
-        try:
-            assert len(model_outputs["generator"].unique()) == 1
-            name = model_outputs["generator"].iloc[0]
-        except:
-            name = "Current model"
-    return name
+def get_generator_name(inputs):
+    # if name is None:
+    #     try:
+    #         assert len(model_outputs["generator"].unique()) == 1
+    #         name = model_outputs["generator"].iloc[0]
+    #     except:
+    #         name = "Current model"
+    # return name
+    names = []
+    for input in inputs:
+        assert len(input["generator"].unique()) == 1
+        names.append(input["generator"].iloc[0])
+    return names
 
-
+def check_length(inputs):
+    reference_length = len(inputs[0])
+    for input in inputs[1:]:
+        if len(input) != reference_length:
+            return False
+    return True
+    
 def get_module_attribute(module, func_name):
     """getattr but only if it's in __all__"""
     if func_name in module.__all__:

@@ -162,17 +162,17 @@ def openai_completions(
     completions_all = [completion for completion_batch in completions for completion in completion_batch]
     completions_text = [completion["text"] for completion in completions_all]
 
-    price = [
-        completion["total_tokens"] * _get_price_per_token(model_name, price_per_token)
-        for completion_batch in completions
-        for completion in completion_batch
-    ]
-    avg_time = [t.duration / n_examples] * len(completions_text)
+    # price = [
+    #     completion["total_tokens"] * _get_price_per_token(model_name, price_per_token)
+    #     for completion_batch in completions
+    #     for completion in completion_batch
+    # ]
+    # avg_time = [t.duration / n_examples] * len(completions_text)
 
     return dict(
         completions=completions_text,
-        price_per_example=price,
-        time_per_example=avg_time,
+        # price_per_example=price,
+        # time_per_example=avg_time,
         completions_all=completions_all,
     )
 

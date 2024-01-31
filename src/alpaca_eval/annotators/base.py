@@ -624,14 +624,14 @@ class SingleAnnotator:
             df_to_annotate[self.annotation_column] = []
             return df_to_annotate
 
-        df_to_annotate = self._preprocess(df_to_annotate)
+        #df_to_annotate = self._preprocess(df_to_annotate)
 
         # the following only reapplies the parsing in case you already stored the raw completions. requires batch_size=1
-        if self.completion_column in df_to_annotate.columns and self.batch_size == 1:
-            # keep only the rows that have not been annotated yet
-            main_df_to_annotate = df_to_annotate
-            idx_not_completed = df_to_annotate[self.completion_column].isna()
-            df_to_annotate = df_to_annotate[idx_not_completed].copy()
+        # if self.completion_column in df_to_annotate.columns and self.batch_size == 1:
+        #     # keep only the rows that have not been annotated yet
+        #     main_df_to_annotate = df_to_annotate
+        #     idx_not_completed = df_to_annotate[self.completion_column].isna()
+        #     df_to_annotate = df_to_annotate[idx_not_completed].copy()
 
         if not df_to_annotate.empty:
             # prompts and completions here will not be the same length as the dataframe due to batching
@@ -662,7 +662,7 @@ class SingleAnnotator:
         if self.completion_column is not None:
             df_to_annotate[self.completion_column] = completions_to_save
 
-        df_annotated = self._postprocess(df_to_annotate)
+        #df_annotated = self._postprocess(df_to_annotate)
 
         return df_annotated
 

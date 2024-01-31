@@ -18,6 +18,7 @@ def evaluate(
     input_path: str=None,
     # model_outputs: Optional[AnyLoadableDF] = None,
     # reference_outputs: AnyLoadableDF = constants.ALPACAEVAL_REFERENCE_OUTPUTS,
+    template_path: str = None,
     annotators_config: AnyPath = constants.DEFAULT_ANNOTATOR_CONFIG,
     name: Optional[str] = None,
     output_path: Optional[Union[AnyPath, str]] = "auto",
@@ -121,6 +122,7 @@ def evaluate(
     if input_path is not None:
         inputs = utils.load_or_convert_to_dataframe(input_path)
         names = utils.get_generator_name(inputs)
+        ##TODO you need generate a template
         print("evaluating the following generators:",names)
         # if (name not in leaderboard) or is_overwrite_leaderboard:
         #     logging.info(f"Evaluating the {name} outputs.")
