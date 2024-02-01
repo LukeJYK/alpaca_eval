@@ -730,10 +730,10 @@ class SingleAnnotator:
                 batch_annotations = list(batch_annotations)
 
                 if len(batch_annotations) != self.batch_size:
-                    logging.warning(
-                        f"Found {len(batch_annotations)} annotations in:'''\n{completion}\n''' but expected"
-                        f" {self.batch_size}. We are setting all annotations to None."
-                    )
+                    # logging.warning(
+                    #     f"Found {len(batch_annotations)} annotations in:'''\n{completion}\n''' but expected"
+                    #     f" {self.batch_size}. We are setting all annotations to None."
+                    # )
                     batch_annotations = [None] * self.batch_size
 
             except Exception as e:

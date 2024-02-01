@@ -138,6 +138,7 @@ def make_prompts(
     for i in range(output_length - 1):
         insert2 = insert2 + "\n\n## Output ({}):\n".format(i+2)+ "{output_"+ str(i+2)+"}"
     template = template.replace('"PATTERN_INPUT"', insert2)
+    template = template.replace('"NUM"', str(df.columns.values.shape[0]-2))
     text_to_format = re.findall(r"{([^ \s]+?)}", template)
     n_occurrences = Counter(text_to_format)
 
