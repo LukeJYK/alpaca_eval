@@ -664,7 +664,7 @@ class SingleAnnotator:
 
         #df_annotated = self._postprocess(df_to_annotate)
 
-        return df_annotated
+        return df_to_annotate
 
     ######################
 

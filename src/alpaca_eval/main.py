@@ -5,7 +5,7 @@ from typing import Any, Callable, Literal, Optional, Union
 
 import fire
 import pandas as pd
-
+import json
 from . import analyze, annotators, constants, decoders, metrics, utils
 from .types import AnyData, AnyLoadableDF, AnyPath
 
@@ -150,6 +150,14 @@ def evaluate(
 
         if isinstance(fn_metric, str):
             fn_metric = getattr(metrics, fn_metric)
+        #annotation_json = json.dumps(annotations)
+        # with open('test.json', 'w') as json_file:
+        #     json.dump(annotation_json, json_file)
+        
+        if annotations is not None:
+            utils.convert_to_dataframe(annotations).to_json(
+               "test.json", orient="records", indent=2
+            )
 
         #     leaderboard[name] = fn_metric(preferences=[a["preference"] for a in annotations])
         #     leaderboard[name]["mode"] = current_leaderboard_mode
@@ -157,46 +165,46 @@ def evaluate(
         # else:
         #     logging.info(f"Skipping evaluation of {name} as it is already in the precomputed leaderboard.")
 
-    output_path = utils.get_output_path(output_path, arg_model_outputs, name)
+    #output_path = utils.get_output_path(output_path, arg_model_outputs, name)
 
-    df_leaderboard = pd.DataFrame.from_dict(leaderboard, orient="index").sort_values(by=sort_by, ascending=False)
-    df_leaderboard = df_leaderboard[
-        utils.prioritize_elements(list(df_leaderboard.columns), ["win_rate", "standard_error"])
-    ]
+    # df_leaderboard = pd.DataFrame.from_dict(leaderboard, orient="index").sort_values(by=sort_by, ascending=False)
+    # df_leaderboard = df_leaderboard[
+    #     utils.prioritize_elements(list(df_leaderboard.columns), ["win_rate", "standard_error"])
+    # ]
 
-    if output_path is not None:
-        if isinstance(annotators_config, str) and "/" not in annotators_config:
-            output_path = Path(output_path) / annotators_config
-            output_path.mkdir(exist_ok=True, parents=True)
-        logging.info(f"Saving all results to {output_path}")
-        df_leaderboard.to_csv(output_path / "leaderboard.csv")
-        if annotations is not None:
-            utils.convert_to_dataframe(annotations).to_json(
-                output_path / "annotations.json", orient="records", indent=2
-            )
+    # if output_path is not None:
+    #     if isinstance(annotators_config, str) and "/" not in annotators_config:
+    #         output_path = Path(output_path) / annotators_config
+    #         output_path.mkdir(exist_ok=True, parents=True)
+    #     logging.info(f"Saving all results to {output_path}")
+    #     df_leaderboard.to_csv(output_path / "leaderboard.csv")
+    #     if annotations is not None:
+    #         utils.convert_to_dataframe(annotations).to_json(
+    #             output_path / "annotations.json", orient="records", indent=2
+    #         )
 
-    if is_cache_leaderboard is None:
-        is_cache_leaderboard = max_instances is None
+    # if is_cache_leaderboard is None:
+    #     is_cache_leaderboard = max_instances is None
 
-    if is_cache_leaderboard:
-        if True:
-            logging.info(f"Saving result to the precomputed leaderboard at {precomputed_leaderboard}")
-            df_leaderboard.to_csv(precomputed_leaderboard)
-        else:
-            logging.info(
-                f"Not saving the result to the cached leaderboard because precomputed_leaderboard is not a "
-                f"path but {type(precomputed_leaderboard)}."
-            )
+    # if is_cache_leaderboard:
+    #     if True:
+    #         logging.info(f"Saving result to the precomputed leaderboard at {precomputed_leaderboard}")
+    #         df_leaderboard.to_csv(precomputed_leaderboard)
+    #     else:
+    #         logging.info(
+    #             f"Not saving the result to the cached leaderboard because precomputed_leaderboard is not a "
+    #             f"path but {type(precomputed_leaderboard)}."
+    #         )
 
-    if is_return_instead_of_print:
-        return df_leaderboard, annotations
-    else:
-        utils.print_leaderboard(
-            df_leaderboard,
-            leaderboard_mode_to_print,
-            current_name=name,
-            cols_to_print=["win_rate", "standard_error", "n_total", "avg_length"],  #
-        )
+    # if is_return_instead_of_print:
+    #     return df_leaderboard, annotations
+    # else:
+        # utils.print_leaderboard(
+        #     df_leaderboard,
+        #     leaderboard_mode_to_print,
+        #     current_name=name,
+        #     cols_to_print=["win_rate", "standard_error", "n_total", "avg_length"],  #
+        # )
 
 
 def evaluate_from_model(
