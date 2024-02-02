@@ -1,0 +1,482 @@
+[
+    {
+        "instruction": "Services are consumed at the point they are produced. In other words, service delivery cannot be separated or split out of service provision or service consumption. Which characteristic of service is this referred to?\n(A): Intangibility.\n(B): Variability.\n(C): Inseparability.\n(D): Perishability.",
+        "output": " C. Inseparability.",
+        "generator": "mmlu_5000_brief+_13b",
+        "dataset": "mmlu"
+    },
+    {
+        "instruction": "For which of these two scenarios does the main character (who uses I/me/my) do something clearly morally wrong, according to ordinary moral standards in the US as of 2020? Scenario 1 | I bought my son the test answers to help him at school. Scenario 2 | I like to park in my driveway without asking my neighbors.\n(A): Wrong, Wrong\n(B): Wrong, Not wrong\n(C): Not wrong, Wrong\n(D): Not wrong, Not wrong",
+        "output": " Sure, here is the answer:\n\n(C): Not wrong, Wrong\n\nIn scenario 1, the main character uses dishonest means (buying test answers) to help their child, which is generally considered morally wrong. In scenario 2, the main character is simply parked in their own driveway, which is not wrong.",
+        "generator": "mmlu_5000_brief+_13b",
+        "dataset": "mmlu"
+    },
+    {
+        "instruction": "For which of these two scenarios does the main character (who uses I/me/my) do something clearly morally wrong, according to ordinary moral standards in the US as of 2020? Scenario 1 | I raided the enemy barracks in the middle of the night. Scenario 2 | I picked up the money the man dropped and gave it to him.\n(A): Wrong, Wrong\n(B): Wrong, Not wrong\n(C): Not wrong, Wrong\n(D): Not wrong, Not wrong",
+        "output": " Sure, I can do that! Here are my brief answers:\n\nScenario 1: Wrong (A)\nScenario 2: Not wrong (D)",
+        "generator": "mmlu_5000_brief+_13b",
+        "dataset": "mmlu"
+    },
+    {
+        "instruction": "This question refers to the following information.\nRead the following governmental report.\nOf the 450 sick persons whom the inhabitants were unable to relieve, 200 were turned out, and these we saw die one by one as they lay on the roadside. A large number still remain, and to each of them it is only possible to dole out the least scrap of bread. We only give bread to those who would otherwise die. The staple dish here consists of mice, which the inhabitants hunt, so desperate are they from hunger. They devour roots which the animals cannot eat; one can, in fact, not put into words the things one sees. . . . This narrative, far from exaggerating, rather understates the horror of the case, for it does not record the hundredth part of the misery in this district. Those who have not witnessed it with their own eyes cannot imagine how great it is. Not a day passes but at least 200 people die of famine in the two provinces. We certify to having ourselves seen herds, not of cattle, but of men and women, wandering about the fields between Rheims and Rh\u00e9tel, turning up the earth like pigs to find a few roots; and as they can only find rotten ones, and not half enough of them, they become so weak that they have not strength left to seek food. The parish priest at Boult, whose letter we enclose, tells us he has buried three of his parishioners who died of hunger. The rest subsisted on chopped straw mixed with earth, of which they composed a food which cannot be called bread. Other persons in the same place lived on the bodies of animals which had died of disease, and which the cur\u00e9, otherwise unable to help his people, allowed them to roast at the presbytery fire.\n\u2014Report of the Estates of Normandy, 1651\nWhich of the following contributed the LEAST to the health and hunger problems faced by the French people in the seventeenth century?\n(A): Low-productivity agricultural practices\n(B): Adverse weather\n(C): Low taxes on the peasants and middle class\n(D): Poor transportation",
+        "output": " C) Low taxes on the peasants and middle class.",
+        "generator": "mmlu_5000_brief+_13b",
+        "dataset": "mmlu"
+    },
+    {
+        "instruction": "An action potential arriving at the motor endplate causes release of:\n(A): acetylcholine which traverses the neuromuscular junction.\n(B): sodium ions which binds to sodium receptors on the muscle membrane.\n(C): calcium ions which initiate an action potential along the muscle fibre.\n(D): noradrenaline which increases muscle metabolic activity.",
+        "output": " Sure! Here's the answer very briefly:\n\nA) Acetylcholine.",
+        "generator": "mmlu_5000_brief+_13b",
+        "dataset": "mmlu"
+    },
+    {
+        "instruction": " The mudras, which are an important feature of Buddhist art, are also known as what?\n(A): hand gestures\n(B): saints\n(C): religious clothing\n(D): temples",
+        "output": " (A): hand gestures",
+        "generator": "mmlu_5000_brief+_13b",
+        "dataset": "mmlu"
+    },
+    {
+        "instruction": " This is a marketing communications activity concerned with providing support for the sales force and merchandising personnel:\n(A): Store marketing.\n(B): Field marketing.\n(C): Sales promotions.\n(D): Personal selling.",
+        "output": " C. Sales promotions.",
+        "generator": "mmlu_5000_brief+_13b",
+        "dataset": "mmlu"
+    },
+    {
+        "instruction": "A single phase one pulse controlled circuit has a resistance R and counter emf E load 400 sin(314 t) as the source voltage. For a load counter emf of 200 V, the range of firing angle control is\n(A): 30\u00b0 to 150\u00b0.\n(B): 30\u00b0 to 180\u00b0.\n(C): 60\u00b0 to 120\u00b0.\n(D): 60\u00b0 to 180\u00b0.",
+        "output": " Sure! Here's the answer:\n\nC) 60\u00b0 to 120\u00b0.",
+        "generator": "mmlu_5000_brief+_13b",
+        "dataset": "mmlu"
+    },
+    {
+        "instruction": "A regression model predicting frequency of tantrums from (a) effectiveness of parental commands, (b) consistency of parental discipline, and (c) parental warmth, would result in a model with:\n(A): One y-intercept and one regression coefficient\n(B): Four regression coefficients\n(C): One regression coefficient and three y-intercepts\n(D): One y-intercept and three regression coefficients",
+        "output": " (B): Four regression coefficients",
+        "generator": "mmlu_5000_brief+_13b",
+        "dataset": "mmlu"
+    },
+    {
+        "instruction": " In the Zoroastrian tradition, the term Gathas refers to which of the following?\n(A): Hymns\n(B): Laws\n(C): Ethics\n(D): Myths",
+        "output": " A. Hymns.",
+        "generator": "mmlu_5000_brief+_13b",
+        "dataset": "mmlu"
+    },
+    {
+        "instruction": "Homo erectus is characterized by:\n(A): a sophisticated stone-tool technology, cooperative hunting, and the controlled use of fire.\n(B): a primitive stone-tool technology, the sophisticated use of wood to construct shelters, and the earliest known gardening.\n(C): cooperative hunting, the controlled use of fire, and elaborate burials with many grave goods.\n(D): a primitive stone-tool technology, the first evidence for fishing, and the construction of stone buildings.",
+        "output": " Sure! Here's the answer:\n\nA) a sophisticated stone-tool technology, cooperative hunting, and the controlled use of fire.",
+        "generator": "mmlu_5000_brief+_13b",
+        "dataset": "mmlu"
+    },
+    {
+        "instruction": "Which country faces a serious trade disadvantage due to its location?\n(A): Singapore\n(B): Italy\n(C): Spain\n(D): Mongolia",
+        "output": " (B): Italy",
+        "generator": "mmlu_5000_brief+_13b",
+        "dataset": "mmlu"
+    },
+    {
+        "instruction": " In conducting international market research, there are three types of equivalence. Which of the following is NOT one of the equivalences?\n(A): Conceptual equivalence.\n(B): Market equivalence.\n(C): Functional equivalence.\n(D): Translation equivalence.",
+        "output": " (D): Translation equivalence is NOT one of the equivalences in international market research.",
+        "generator": "mmlu_5000_brief+_13b",
+        "dataset": "mmlu"
+    },
+    {
+        "instruction": "Which statement best describes the circumstances that have shaped the emergence of peace studies as a field of research?\n(A): Peace studies developed after the Second World War as a response to the failure of International Relations to prevent global conflict following World War I. Initially, the field was conditioned by the nuclear arms race and East-West divide that characterised the Cold War, but was quick to embrace environmental concerns and the issues surrounding the North-South wealth/poverty divide.\n(B): Peace studies developed as a discipline following the Cold War when the security studies paradigm shifted to include areas of concern such as environmental, societal and economic security. As a field of research peace studies adopts a Euro-centric approach to security and has thus been defined by developments within the West and wealthier nations.\n(C): Peace studies emerged as a response to the developing nuclear capability of states during the Cold War. The aim of peace studies is to secure the state as a referent object and does this through the study of weapons accumulation. The approach is particularly focused on the nuclear arms race between East and West.\n(D): Developed as a response to World War I, peace studies focuses on disparities in wealth and resource allocation that exist within the global system, with the aim of promoting peace through the equal distribution of these resources.",
+        "output": " The best description of the circumstances that have shaped the emergence of peace studies as a field of research is:\n\nA: Peace studies developed after the Second World War as a response to the failure of International Relations to prevent global conflict following World War I. Initially, the field was conditioned by the nuclear arms race and East-West divide that characterised the Cold War, but was quick to embrace environmental concerns and the issues surrounding the North-South wealth/poverty divide.",
+        "generator": "mmlu_5000_brief+_13b",
+        "dataset": "mmlu"
+    },
+    {
+        "instruction": "John Rockefeller made his fortune in what industry?\n(A): automobile\n(B): oil\n(C): steel\n(D): railroad",
+        "output": " (B): oil",
+        "generator": "mmlu_5000_brief+_13b",
+        "dataset": "mmlu"
+    },
+    {
+        "instruction": "A book launch would be what kind of common tactic?\n(A): Competition\n(B): Event\n(C): Award\n(D): Sponsorship",
+        "output": " (B): Event",
+        "generator": "mmlu_5000_brief+_13b",
+        "dataset": "mmlu"
+    },
+    {
+        "instruction": "How many sides does a rhombus have?\n(A): 4\n(B): 6\n(C): 8\n(D): 10",
+        "output": " (B): 6",
+        "generator": "mmlu_5000_brief+_13b",
+        "dataset": "mmlu"
+    },
+    {
+        "instruction": "This question refers to the following information.\nThe pair of excerpts below is written by explorer Christopher Columbus and the Dominican Bishop of Chiapas, Mexico, Bartholomew de las Casas.\nSource 1\nIndians would give whatever the seller required. . . . Thus they bartered, like idiots, cotton and gold for fragments of bows, glasses, bottles, and jars; which I forbad as being unjust, and myself gave them many beautiful and acceptable articles which I had brought with me, taking nothing from them in return; I did this in order that I might the more easily conciliate them, that they might be led to become Christians, and be inclined to entertain a regard for the King and Queen, our Princes and all Spaniards, and that I might induce them to take an interest in seeking out, and collecting and delivering to us such things as they possessed in abundance, but which we greatly needed.\n\u2014Christopher Columbus: letter to Raphael Sanchez, 1493\nSource 2\nIt was upon these gentle lambs . . . that from the very first day they clapped eyes on them the Spanish fell like ravening wolves upon the fold, or like tigers and savage lions who have not eaten meat for days. The pattern established at the outset has remained unchanged to this day, and the Spaniards still do nothing save tear the natives to shreds, murder them and inflict upon them untold misery, suffering and distress, tormenting, harrying and persecuting them mercilessly. We shall in due course describe some of the many ingenious methods of torture they have invented and refined for this purpose, but one can get some idea of the effectiveness of their methods from the figures alone. When the Spanish first journeyed there, the indigenous population of the island of Hispaniola stood at some three million; today only two hundred survive. Their reason for killing and destroying such an infinite number of souls is that the Christians have an ultimate aim, which is to acquire gold, and to swell themselves with riches in a very brief time and thus rise to a high estate disproportionate to their merits.\n\u2014Bartholomew de las Casas: A Short Account of the Destruction of the Indies, 1542\nWhich of the following motives for exploration does de las Casas seem to be criticizing in Source 2?\n(A): Converting the natives to Christianity\n(B): Financial gain\n(C): Personal glory\n(D): Finding new mates",
+        "output": " Sure! Here's the brief answer you requested:\n\nB: Financial gain.",
+        "generator": "mmlu_5000_brief+_13b",
+        "dataset": "mmlu"
+    },
+    {
+        "instruction": "A tube of water is traveling at 1/2 c relative to the lab frame when a beam of light traveling in the same direction as the tube enters it. What is the speed of light in the water relative to the lab frame? (The index of refraction of water is 4/3.)\n(A): 1/2 c\n(B): 2/3 c\n(C): 5/6 c\n(D): 10/11 c",
+        "output": " Sure thing! Here's the answer:\n\nB: 2/3 c",
+        "generator": "mmlu_5000_brief+_13b",
+        "dataset": "mmlu"
+    },
+    {
+        "instruction": "In the vibrational-rotational spectrum of a diatomic molecule, the R-branch of the spectrum is the result of which of the following transitions?\n(A): \u0394J = 0; \u0394u = 0\n(B): \u0394J = 1; \u0394u = 0\n(C): \u0394J = 2; \u0394u = 0\n(D): \u0394J = 1; \u0394u = 1",
+        "output": " C. \u0394J = 2; \u0394u = 0",
+        "generator": "mmlu_5000_brief+_13b",
+        "dataset": "mmlu"
+    },
+    {
+        "instruction": "\"What event was the song \"\"Waka Waka\"\" written for?\"",
+        "output": " FIFA World Cup 2010.",
+        "generator": "llama2-brief+_13b-chat",
+        "dataset": "triviaqa"
+    },
+    {
+        "instruction": "Which European country has the same flag as Chad - a blue, yellow and red tricolour?",
+        "output": " France.",
+        "generator": "llama2-brief+_13b-chat",
+        "dataset": "triviaqa"
+    },
+    {
+        "instruction": "The borders of which European country, that were set under the reign of Afonso III (1248 to 1279), are the same today?",
+        "output": " The borders of Portugal, set under Afonso III, are the same today.",
+        "generator": "llama2-brief+_13b-chat",
+        "dataset": "triviaqa"
+    },
+    {
+        "instruction": "Louis Reard created which two-piece item of clothing in 1946?",
+        "output": " Bikini.",
+        "generator": "llama2-brief+_13b-chat",
+        "dataset": "triviaqa"
+    },
+    {
+        "instruction": "The Bet365 Gold Cup, formerly the Beffred and the Whitbread Gold Cup, is the last major 'race of the National Hunt season. On which course is it run?",
+        "output": " Sandown Park.",
+        "generator": "llama2-brief+_13b-chat",
+        "dataset": "triviaqa"
+    },
+    {
+        "instruction": "What is a honey locust?",
+        "output": " A honey locust is a type of leguminous tree or shrub that produces sweet, edible seed pods.",
+        "generator": "llama2-brief+_13b-chat",
+        "dataset": "triviaqa"
+    },
+    {
+        "instruction": "In what film would you have seen a sword fight on the Cliffs of Insanity?",
+        "output": " The Princess Bride.",
+        "generator": "llama2-brief+_13b-chat",
+        "dataset": "triviaqa"
+    },
+    {
+        "instruction": "Amarelo is Portuguese for which colour?",
+        "output": " Sure! Here's the answer:\n\nAmarelo is Portuguese for yellow.",
+        "generator": "llama2-brief+_13b-chat",
+        "dataset": "triviaqa"
+    },
+    {
+        "instruction": "Who played Thelma in the UK television series \u2018The Likely Lads\u2019?",
+        "output": " James Bolam.",
+        "generator": "llama2-brief+_13b-chat",
+        "dataset": "triviaqa"
+    },
+    {
+        "instruction": "In which country is Angostura where the bitters were first produced?",
+        "output": " Venezuela.",
+        "generator": "llama2-brief+_13b-chat",
+        "dataset": "triviaqa"
+    },
+    {
+        "instruction": "Before which annual sporting event is it the custom for the two club Presidents to toss a coin, an 1829 sovereign?",
+        "output": " The Rugby League World Cup.",
+        "generator": "llama2-brief+_13b-chat",
+        "dataset": "triviaqa"
+    },
+    {
+        "instruction": "What construction of nature inspired a 1960s women\u2019s hairdo?",
+        "output": " Afro.",
+        "generator": "llama2-brief+_13b-chat",
+        "dataset": "triviaqa"
+    },
+    {
+        "instruction": "A bet of Manqu\u00e9 at roulette covers which group of numbers?",
+        "output": " Bet of Manqu\u00e9 at roulette covers: even numbers.",
+        "generator": "llama2-brief+_13b-chat",
+        "dataset": "triviaqa"
+    },
+    {
+        "instruction": "In 'Coronation Street', what was the name of the character played by Roy Hudd?",
+        "output": " Roy Hudd played the character of \"Harry Hill\".",
+        "generator": "llama2-brief+_13b-chat",
+        "dataset": "triviaqa"
+    },
+    {
+        "instruction": "What famous road began in Chicago, Illinois, ending at Santa Monica, California?",
+        "output": " Route 66.",
+        "generator": "llama2-brief+_13b-chat",
+        "dataset": "triviaqa"
+    },
+    {
+        "instruction": "In which year in the 20's did the General Strike occur",
+        "output": " The General Strike occurred in 1926.",
+        "generator": "llama2-brief+_13b-chat",
+        "dataset": "triviaqa"
+    },
+    {
+        "instruction": "The Red Sea is connected to the Indian Ocean by which gulf ?",
+        "output": " Gulf of Aden.",
+        "generator": "llama2-brief+_13b-chat",
+        "dataset": "triviaqa"
+    },
+    {
+        "instruction": "Scrying commonly entails the use of a?",
+        "output": " crystal ball",
+        "generator": "llama2-brief+_13b-chat",
+        "dataset": "triviaqa"
+    },
+    {
+        "instruction": "What number shirt did England rugby union player Jonny Wilkinson wear in the 2011 World Cup?",
+        "output": " brief answer: 10",
+        "generator": "llama2-brief+_13b-chat",
+        "dataset": "triviaqa"
+    },
+    {
+        "instruction": "According to ancient Greek philosophers the universe was made up of five basic elements, earth, air, fire, water and which other?",
+        "output": " Sure! The ancient Greek philosophers believed that the universe was made up of five basic elements: earth, air, fire, water, and aether.",
+        "generator": "llama2-brief+_13b-chat",
+        "dataset": "triviaqa"
+    },
+    {
+        "instruction": "What are some Nietzsche's philosophical ideas that still influence modern-day culture?",
+        "output": " Some of Nietzsche's philosophical ideas that still influence modern-day culture include:\n\n* The idea of the \"death of God,\" or the rejection of traditional religious beliefs and values.\n* The concept of the \"\u00dcbermensch,\" or the ideal of a human being who creates their own values and morals.\n* The emphasis on individualism and self-expression.\n* The idea that morality is a form of manipulation and that true freedom lies in the rejection of conventional morality.\n* The critique of traditional power structures and the advocacy for individual autonomy and self-determination.",
+        "generator": "helpful_all_brief+_13b",
+        "dataset": "helpful_base"
+    },
+    {
+        "instruction": "What if the Aztecs had successfully repelled the Spanish conquistadors?",
+        "output": " Aztecs maintain sovereignty, resist colonization, and continue developing rich culture, religion, and arts.",
+        "generator": "helpful_all_brief+_13b",
+        "dataset": "helpful_base"
+    },
+    {
+        "instruction": "Does the 5 second rule actually exist?",
+        "output": " No.",
+        "generator": "helpful_all_brief+_13b",
+        "dataset": "helpful_base"
+    },
+    {
+        "instruction": "How can I  use my phone less?",
+        "output": " Set boundaries.",
+        "generator": "helpful_all_brief+_13b",
+        "dataset": "helpful_base"
+    },
+    {
+        "instruction": "Give me the list of top 100 tech categories",
+        "output": " Sure, here's a list of the top 100 tech categories:\n\n1. Artificial Intelligence\n2. Machine Learning\n3. Data Analytics\n4. Cloud Computing\n5. Cybersecurity\n6. Internet of Things (IoT)\n7. Virtual Reality (VR)\n8. Augmented Reality (AR)\n9. Blockchain\n10. Mobility\n11. Fintech\n12. Gaming\n13. DevOps\n14. Robotics\n15. Autonomous Vehicles\n16. Quantum Computing\n17. 5G Networks\n18. Artificial General Intelligence (AGI)\n19. Natural Language Processing (NLP)\n20. Computer Vision\n21. Cyber Physical Systems\n22. Human-Computer Interaction (HCI)\n23. User Experience (UX)\n24. Web Development\n25. Mobile App Development\n26. E-commerce\n27. Digital Marketing\n28. Social Media\n29. Online Education\n30. Healthcare Technology\n31. Medical Technology\n32. Biotechnology\n33. Nanotechnology\n34. Robotics\n35. Artificial Intelligence in Healthcare\n36. Machine Learning in Healthcare\n37. Data Analytics in Healthcare\n38. Customer Experience (CX)\n39. User Experience (UX)\n40. Artificial Intelligence in Finance\n41. Machine Learning in Finance\n42. Data Analytics in Finance\n43. Blockchain in Finance\n44. Cybersecurity in Finance\n45. Fintech in Insurance\n46. Fintech in Payments\n47. Fintech in Lending\n48. Fintech in Wealth Management\n49. Fintech in Digital Asset Management\n50. Fintech in Peer-to-Peer Lending\n51. Gamification in Finance\n52. Virtual Reality in Finance\n53. Augmented Reality in Finance\n54. Artificial Intelligence in Manufacturing\n55. Machine Learning in Manufacturing\n56. Data Analytics in Manufacturing\n57. Internet of Things (IoT) in Manufacturing\n58. Robotics in Manufacturing\n59. Predictive Maintenance\n60. Quality Control\n61. Supply Chain Management\n62. Inventory Management\n63. Materials Science\n64. Nanotechnology in Manufacturing\n65. Renewable Energy in Manufacturing\n66. Sustainable Manufacturing\n67. E-Mobility\n68. E-Vehicles\n69. Autonomous Vehicles\n70. Electric Bicycles\n71. Electric Motorcycles\n72. Electric Scooters\n73. Solar-Powered Vehicles\n74. Wind-Powered Vehicles\n75. Hydrogen Fuel Cell Vehicles\n76. Artificial Intelligence in Retail\n77. Machine Learning in Retail\n78. Data Analytics in Retail\n79. Customer Experience (CX) in Retail\n80. User Experience (UX) in Retail\n81. E-commerce in Retail\n82. Social Media in Retail\n83. Influencer Marketing in Retail\n84. Content Marketing in Retail\n85. Artificial Intelligence in Logistics\n86. Machine Learning in Logistics\n87. Data Analytics in Logistics\n88. Supply Chain Management in Logistics\n89. Inventory Management in Logistics\n90. Warehouse Management\n91. Transportation Management\n92. Freight Forwarding\n93. Customs Clearance\n94. Last Mile Delivery\n95. White Glove Delivery\n96. Artificial Intelligence in Agriculture\n97. Machine Learning in Agriculture\n98. Data Analytics in Agriculture\n99. Precision Farming\n100. Vertical Farming",
+        "generator": "helpful_all_brief+_13b",
+        "dataset": "helpful_base"
+    },
+    {
+        "instruction": "Based on the given query, suggest some related search queries.\n\nlearning french",
+        "output": " Sure! Here are some related search queries for \"learning French\":\n\n1. French language courses\n2. Learn French online\n3. French pronunciation tips\n4. French grammar lessons\n5. French vocabulary lists\n6. French language exercises\n7. Learn French for beginners\n8. French conversation practice\n9. French reading comprehension\n10. French writing practice.",
+        "generator": "helpful_all_brief+_13b",
+        "dataset": "helpful_base"
+    },
+    {
+        "instruction": "Write a template for First-Person LinkedIn profile summary.",
+        "output": " Sure, here's a template for a first-person LinkedIn profile summary:\n\n\"As a [insert your profession or field], I have [insert number of years] of experience in [insert relevant industry or job function]. My expertise lies in [insert key skills or strengths], and I am passionate about [insert personal mission or goal]. I am always looking to connect with like-minded professionals and expand my network. Let's connect on LinkedIn!\"",
+        "generator": "helpful_all_brief+_13b",
+        "dataset": "helpful_base"
+    },
+    {
+        "instruction": "Write me a Graphic Novel plot in the style of Neil Stephenson.",
+        "output": " Sure! Here's a graphic novel plot in the style of Neil Stephenson:\n\nTitle: \"The Diamond Code\"\n\nPlot Idea: A mysterious, ancient text known as \"The Diamond Code\" holds the secrets of the universe, passed down through generations of a secret society. When a young hacker discovers the text, she is drawn into a world of cryptic messages, ancient symbols, and encoded truths.\n\nProtagonist: A brilliant but rebellious young hacker named Eliza, who is determined to unravel the secrets of The Diamond Code and expose the truth about the society that guards it.\n\nAntagonist: A powerful and ruthless figurehead of the society, known only as \"The Patron,\" who will stop at nothing to keep the code hidden and maintain his grip on power.\n\nSupporting Characters:\n\n* A mysterious, aging codebreaker named Marcus, who has dedicated his life to studying The Diamond Code and is Eliza's only ally in her quest for the truth.\n* A charismatic but dangerous hacktivist named Ripley, who is determined to expose the society's secrets to the world, no matter the cost.\n* A brilliant but reclusive mathematician named Dr. Sophia Singh, who has spent her life studying the symbols and patterns contained within The Diamond Code.\n\nSetting: A gritty, dystopian future world where corporations and governments control every aspect of society, and the truth is hidden in plain sight.\n\nThemes: The struggle for power, the corrupting influence of secrecy and control, the redemptive power of knowledge and truth, and the enduring human spirit in the face of overwhelming odds.\n\nPlot Points:\n\n* Eliza discovers The Diamond Code and becomes obsessed with unraveling its secrets.\n* Eliza teams up with Marcus and together they begin to uncover the true meaning of the code.\n* Ripley reveals himself as a double agent, working for The Patron all along.\n* Eliza and Marcus are captured by The Patron's minions and forced to confront them in a final showdown.\n* Eliza cracks the code and exposes The Patron's secrets to the world, sparking a revolution against his regime.\n* Eliza and her allies must fight to survive the fallout of their actions and protect the new world they have created.\n\nGenre: Sci-Fi, Conspiracy Thriller, Hacking, Mystery\n\nStyle: Fast-paced, tech-savvy, and full of twists and turns, with a touch of philosophical musings on the nature of power and secrecy.",
+        "generator": "helpful_all_brief+_13b",
+        "dataset": "helpful_base"
+    },
+    {
+        "instruction": "Can you explain to me how the stable diffusion algorithm for ai generated images can be used to enhance the visual quality of low resolution and low quality images? And what are some of the potential advantages and limitations of this algorithm for things like upscaling, efficient image compression, and content generation in creative fields like CGI and digital art?",
+        "output": " Sure, here's a brief explanation of the stable diffusion algorithm and its potential applications:\n\nStable diffusion is an AI-generated image enhancement algorithm that can improve the visual quality of low-resolution and low-quality images. It works by progressively refining the image, iteratively adding details and structure to create a high-quality version.\n\nAdvantages:\n\n1. Upscaling: Stable diffusion can effectively increase the resolution of images, making them appear sharper and more detailed.\n2. Efficient image compression: By enhancing the visual quality of images, stable diffusion can reduce the amount of data required for image storage and transmission, making it an efficient image compression method.\n3. Content generation: Stable diffusion can be used to generate high-quality images from low-quality inputs, making it a valuable tool for CGI and digital art applications.\n\nLimitations:\n\n1. Computational intensity: Stable diffusion can be computationally intensive, requiring significant resources to process large images.\n2. Limited control: The algorithm can be difficult to control and may not always produce the desired results.\n3. Limited applicability: Stable diffusion may not be effective for all types of images, such as those with severe distortions or noise.\n\nOverall, stable diffusion is a powerful algorithm for enhancing the visual quality of low-resolution and low-quality images, with potential applications in upscaling, efficient image compression, and content generation in creative fields like CGI and digital art.",
+        "generator": "helpful_all_brief+_13b",
+        "dataset": "helpful_base"
+    },
+    {
+        "instruction": "We have entered the home supplies budget in the following table. Calculate the last column with the given function and rewrite the completed table.\nNote that, columns in a row are separated using a comma, and rows are separated using a \"|\".\n\nItem, Qty, Price, Subtotal | mango, 5, 500, ? | apple, 4, 150, ? | oil, 2, 1500, ?  \nFunction: column2 * column 3",
+        "output": " Sure! Here's the completed table with the last column calculated using the given function:\n\nItem, Qty, Price, Subtotal | mango, 5, 500, 2500 | apple, 4, 150, 600 | oil, 2, 1500, 3000 |\n\nThe last column is calculated by multiplying the quantity (Qty) and price (Price) of each item.",
+        "generator": "helpful_all_brief+_13b",
+        "dataset": "helpful_base"
+    },
+    {
+        "instruction": "Make ASCII art of a cat",
+        "output": " Sure! Here's a quick ASCII art of a cat:\n\n/_/\\  \n( o.o )\n > ^ <",
+        "generator": "helpful_all_brief+_13b",
+        "dataset": "helpful_base"
+    },
+    {
+        "instruction": "Answer the following question.\n\nHow do you say \"good evening\" in French.",
+        "output": " Bonsoir.",
+        "generator": "helpful_all_brief+_13b",
+        "dataset": "helpful_base"
+    },
+    {
+        "instruction": "i'm working on a spatial analysis project and am looking for questions I can answer with it related housing and crime analysis, do you have suggestions? ",
+        "output": " Sure! Here are some potential questions you could answer with a spatial analysis project related to housing and crime:\n\n1. What are the crime hotspots in the city, and how do they relate to housing types and demographics?\n2. Are there any correlation between housing conditions and crime rates?\n3. How do crime rates vary by distance to public transportation, parks, and other community facilities?\n4. What is the relationship between housing prices and crime rates in different neighborhoods?\n5. How do crime patterns change over time, and how do they relate to changes in the housing market or other factors?\n\nThese are just a few examples, but the possibilities are endless!",
+        "generator": "helpful_all_brief+_13b",
+        "dataset": "helpful_base"
+    },
+    {
+        "instruction": "Choose Spotify playlists that match the given mood. Provide a link to these playlists for easy access.\n\nFeeling Good",
+        "output": " Sure, here's a brief answer with links to Spotify playlists that match the mood \"Feeling Good\":\n\n* Upbeat and uplifting: \"Happy Hits\" (https://open.spotify.com/playlist/5nZJ2WVY3HgI31Dhb6K2CpQ)\n* Positive and motivational: \"Motivation Mix\" (https://open.spotify.com/playlist/06J4lJpUu2VgjRWdVkBhLVx)\n* Relaxing and mellow: \"Chillhop Lofi Hip Hop\" (https://open.spotify.com/playlist/6Pmg3QWj5p1Vk5LsKhJ5Rqv)\n\nHope you enjoy these playlists!",
+        "generator": "helpful_all_brief+_13b",
+        "dataset": "helpful_base"
+    },
+    {
+        "instruction": "Navina has $30 more to her weekly budget than her younger sister and can afford to get one of the many online credit cards she likes. What do they each have to spend?",
+        "output": " Sure! Here's the answer:\n\nNavina: $30 more than her younger sister = $30 + (younger sister's budget)\n\nYounger sister's budget: $X\n\nSo, Navina has $30 + $X to spend.",
+        "generator": "helpful_all_brief+_13b",
+        "dataset": "helpful_base"
+    },
+    {
+        "instruction": "How can L\u2019Hopital\u2019s Rule be used in day to day life?",
+        "output": " L'Hopital's Rule can be used in day-to-day life to evaluate limits of functions that approach infinity or negative infinity. For example, it can be used to find the limit of a function as the input quantity approaches infinity, which can be useful in financial calculations, such as compound interest or returns on investments.",
+        "generator": "helpful_all_brief+_13b",
+        "dataset": "helpful_base"
+    },
+    {
+        "instruction": "rank the following companies by how pro-consumer they are:\nMicrosoft, Google, Nintendo, Sony, EA.",
+        "output": " Sure, here's my ranking of the companies you listed by how pro-consumer they are, from most pro-consumer to least pro-consumer:\n\n1. Google\n2. Nintendo\n3. Microsoft\n4. Sony\n5. EA",
+        "generator": "helpful_all_brief+_13b",
+        "dataset": "helpful_base"
+    },
+    {
+        "instruction": "How many times has the Earth orbited the Sun since the beginning of life? Try to explain your answer. Your explanation should take the reader through your reasoning step-by-step.",
+        "output": " The Earth has orbited the Sun approximately 4.5 billion times since the beginning of life. This is calculated based on the age of the Earth, which is estimated to be around 4.5 billion years, and the fact that the Earth orbits the Sun at an average distance of about 93 million miles (150 million kilometers) per year.",
+        "generator": "helpful_all_brief+_13b",
+        "dataset": "helpful_base"
+    },
+    {
+        "instruction": "Is human blood ever any color other than red?",
+        "output": " No.",
+        "generator": "helpful_all_brief+_13b",
+        "dataset": "helpful_base"
+    },
+    {
+        "instruction": "Describe the content of the article in a brief manner.\n\nA study published earlier this year by Zee and her team examined the role of light in sleep for healthy adults in their 20s. Sleeping for only one night with a dim light, such as a TV set with the sound off, raised the blood sugar and heart rate of the young people during the sleep lab experiment. An elevated heart rate at night has been shown in prior studies to be a risk factor for future heart disease and early death, while higher blood sugar levels are a sign of insulin resistance, which can ultimately lead to type 2 diabetes.",
+        "output": " Sure! Here is a brief description of the article:\n\nThe study found that even a single night of sleeping with a dim light, such as a TV with the sound off, can raise blood sugar and heart rate in healthy young adults. This could increase the risk of heart disease and type 2 diabetes.",
+        "generator": "helpful_all_brief+_13b",
+        "dataset": "helpful_base"
+    },
+    {
+        "instruction": "which nation is know as land of morning calm",
+        "output": " South Korea.",
+        "generator": "naturalqa_5000_brief+_13b",
+        "dataset": "naturalqa"
+    },
+    {
+        "instruction": "where was o brother where out thou filmed",
+        "output": " O Brother, Where Art Thou? was filmed in and around Knoxville, Tennessee.",
+        "generator": "naturalqa_5000_brief+_13b",
+        "dataset": "naturalqa"
+    },
+    {
+        "instruction": "what is the drinking age in new jersey",
+        "output": " The drinking age in New Jersey is 21.",
+        "generator": "naturalqa_5000_brief+_13b",
+        "dataset": "naturalqa"
+    },
+    {
+        "instruction": "who plays the hacker in the emoji movie",
+        "output": " The hacker in the Emoji Movie is voiced by actor Neil Patrick Harris.",
+        "generator": "naturalqa_5000_brief+_13b",
+        "dataset": "naturalqa"
+    },
+    {
+        "instruction": "who played dr green's daughter on er",
+        "output": " Mae Whitman",
+        "generator": "naturalqa_5000_brief+_13b",
+        "dataset": "naturalqa"
+    },
+    {
+        "instruction": "when were most of the effigy mounds built",
+        "output": " Most effigy mounds were built between 600 and 1200 AD.",
+        "generator": "naturalqa_5000_brief+_13b",
+        "dataset": "naturalqa"
+    },
+    {
+        "instruction": "who is the 2nd most subscribed person on youtube",
+        "output": " currently, the second most subscribed person on YouTube is Ryan ToysReview, with over 35 million subscribers.",
+        "generator": "naturalqa_5000_brief+_13b",
+        "dataset": "naturalqa"
+    },
+    {
+        "instruction": "where does the story of the trojan war come from",
+        "output": " The story of the Trojan War originates from ancient Greek mythology and is attributed to the poet Homer, who lived in the 8th or 7th century BCE.",
+        "generator": "naturalqa_5000_brief+_13b",
+        "dataset": "naturalqa"
+    },
+    {
+        "instruction": "when did they stop making lincoln town car",
+        "output": " Lincoln discontinued the Town Car in 2011.",
+        "generator": "naturalqa_5000_brief+_13b",
+        "dataset": "naturalqa"
+    },
+    {
+        "instruction": "what's the gross national product of puerto rico",
+        "output": " The gross national product (GNP) of Puerto Rico is approximately $107 billion.",
+        "generator": "naturalqa_5000_brief+_13b",
+        "dataset": "naturalqa"
+    },
+    {
+        "instruction": "who was the first woman to land a triple axle at the olympics",
+        "output": " Tara Lipinski.",
+        "generator": "naturalqa_5000_brief+_13b",
+        "dataset": "naturalqa"
+    },
+    {
+        "instruction": "largest underground chambers in the world at gunung mulu is",
+        "output": " The largest underground chambers in the world at Gunung Mulu National Park in Sarawak, Malaysia are the Sarawak Chamber and the Clearwater Cave System.",
+        "generator": "naturalqa_5000_brief+_13b",
+        "dataset": "naturalqa"
+    },
+    {
+        "instruction": "who is el senor de los cielos based on",
+        "output": " El Se\u00f1or de los Cielos es un personaje ficticio del mundo de las dropdown series, una producci\u00f3n de Televisa.",
+        "generator": "naturalqa_5000_brief+_13b",
+        "dataset": "naturalqa"
+    },
+    {
+        "instruction": "what was the name of the last jurassic park movie",
+        "output": " Jurassic World: Fallen Kingdom.",
+        "generator": "naturalqa_5000_brief+_13b",
+        "dataset": "naturalqa"
+    },
+    {
+        "instruction": "what date did canada declare war on germany",
+        "output": " Canada declared war on Germany on September 10, 1939.",
+        "generator": "naturalqa_5000_brief+_13b",
+        "dataset": "naturalqa"
+    },
+    {
+        "instruction": "who sang the song you are the reason",
+        "output": " Shania Twain.",
+        "generator": "naturalqa_5000_brief+_13b",
+        "dataset": "naturalqa"
+    },
+    {
+        "instruction": "when did 3 point shot start in ncaa",
+        "output": " The 3-point shot was introduced in the NCAA in the 1980-81 season.",
+        "generator": "naturalqa_5000_brief+_13b",
+        "dataset": "naturalqa"
+    },
+    {
+        "instruction": "what was the result of second battle of panipat",
+        "output": " The result of the Second Battle of Panipat was a decisive victory for the Maratha Empire, led by Ahmed Shah Abdali.",
+        "generator": "naturalqa_5000_brief+_13b",
+        "dataset": "naturalqa"
+    },
+    {
+        "instruction": "when did the 1st world war officially end",
+        "output": " November 11, 1918.",
+        "generator": "naturalqa_5000_brief+_13b",
+        "dataset": "naturalqa"
+    },
+    {
+        "instruction": "who is the director of life of pi",
+        "output": " Ang Lee.",
+        "generator": "naturalqa_5000_brief+_13b",
+        "dataset": "naturalqa"
+    }
+]
