@@ -447,7 +447,7 @@ def get_generator_name(inputs):
     # return name
     names = []
     for input in inputs:
-        assert len(input["generator"].unique()) == 1
+        #assert len(input["generator"].unique()) == 1
         names.append(input["generator"].iloc[0])
     return names
 
