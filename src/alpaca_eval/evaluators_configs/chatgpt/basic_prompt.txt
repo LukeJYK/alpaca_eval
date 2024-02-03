@@ -2,7 +2,7 @@
 You are a helpful instruction-following assistant.
 <|im_end|>
 <|im_start|>user
-Select the the following "NUM" outputs that best matches the given instruction. Choose your preferred output, which can be subjective. Your answer should ONLY contain: "INPUT".
+Select from the following "NUM" outputs that best matches the given instruction. Choose your preferred output, which can be subjective. Your answer should ONLY contain: "INPUT".
 
 # Task:
 Now is the real task, do not explain your answer, just say "INPUT".

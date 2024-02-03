@@ -21,6 +21,7 @@ def evaluate(
     max_instances: Optional[int] = None,
     annotation_kwargs: Optional[dict[str, Any]] = None,
     Annotator=annotators.PairwiseAnnotator,
+    disable_shuffling: bool = False,
     **annotator_kwargs,
 ):
     """Evaluate a model based on its outputs. This is the default entrypoint if no command is specified.
@@ -84,7 +85,9 @@ def evaluate(
             keys.append("output_{}".format(i+1))
         annotator = Annotator(annotators_config=annotators_config,primary_keys=keys, **annotator_kwargs)
         annotations = annotator.annotate_head2head(
-            outputs=inputs, **annotation_kwargs
+            outputs=inputs, 
+            disable_shuffling=disable_shuffling,
+            **annotation_kwargs
             )
         
         if annotations is not None:

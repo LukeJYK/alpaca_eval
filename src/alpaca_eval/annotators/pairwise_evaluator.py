@@ -161,6 +161,7 @@ class PairwiseAnnotatorLocal(BaseAnnotator):
         outputs: list,
         keys_to_merge: Optional[Sequence[str]] = None,
         is_ordered: bool = False,
+        disable_shuffling: bool = False,
         **decoding_kwargs,
     ) -> list[dict[str, Any]]:
         """Head-to-head comparison between two sequence of outputs.
@@ -209,8 +210,39 @@ class PairwiseAnnotatorLocal(BaseAnnotator):
 
         # find all the columns that are in both
         #other_same_cols = [k for k in outputs_1.columns if k in outputs_2 and k not in (keys_to_merge + ["output"])]
-        other_same_cols = ['generator','dataset']
         df_to_annotate = utils.merge_multiple_dataframes(outputs, keys_to_merge)
+
+        np.random.seed(0)
+
+        n = len(outputs)  # Number of groups
+        group_size = 3  # Number of columns in each group
+        # Dynamically generate the groups of columns
+        groups = [list(range(i * group_size + 1, (i + 1) * group_size + 1)) for i in range(n)]
+
+        def shuffle_row_groups(row):
+            # Generate a random index for each row
+            randomized_index = np.random.permutation(n)
+
+            # Shuffle the groups based on the random index
+            shuffled_groups = [groups[i] for i in randomized_index]
+            shuffled_row_groups = np.concatenate([row.iloc[group].values for group in shuffled_groups])
+            new_row_data = np.concatenate([row.iloc[0:1], shuffled_row_groups])
+            return pd.Series(new_row_data, index=row.index)
+
+        # Apply the function to each row
+        if not disable_shuffling:
+            df_to_annotate = df_to_annotate.apply(shuffle_row_groups, axis=1)
+
+        # # Reconstruct the DataFrame with the shuffled groups
+        # df_shuffled = pd.concat([df_to_annotate[group] for group in shuffled_groups], axis=1)
+
+        # # Shuffle the groups based on the random index
+        # shuffled_groups = [groups[i] for i in randomized_index]
+
+        # # randomize the columns to avoid bias
+        # for row in df_to_annotate.iterrows():
+        #     random_order = random.shuffle(list(range(len(outputs))))
+            # print(row)        
         
         # Do we need this?????
         # for c in other_same_cols:
