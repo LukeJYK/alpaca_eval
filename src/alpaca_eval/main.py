@@ -22,6 +22,7 @@ def evaluate(
     annotation_kwargs: Optional[dict[str, Any]] = None,
     Annotator=annotators.PairwiseAnnotator,
     disable_shuffling: bool = False,
+    summary_path: str = "summary.json",
     **annotator_kwargs,
 ):
     """Evaluate a model based on its outputs. This is the default entrypoint if no command is specified.
@@ -99,7 +100,25 @@ def evaluate(
                 utils.convert_to_dataframe(annotations).to_json(
                 output_path, orient="records", indent=2
                 )
-
+            summary = {}
+            for item in annotations:
+                winner = item["raw_completion"][8]
+                dataset = item["dataset_1"]
+                winner_key = f"generator_{winner}"
+                if "brief_" in item[winner_key]:
+                    winner_prompt = 1
+                elif "brief+_" in item[winner_key]:
+                    winner_prompt = 2
+                else:
+                    winner_prompt = 0
+                if dataset not in summary:
+                    summary[dataset] = []
+                summary[dataset].append({
+                    "instruction": item["instruction"],
+                    "assistance_lvl": winner_prompt,
+                })
+            with open(summary_path, "w") as f:
+                json.dump(summary, f, indent=4)
     #output_path = utils.get_output_path(output_path, arg_model_outputs, name)
 
 
