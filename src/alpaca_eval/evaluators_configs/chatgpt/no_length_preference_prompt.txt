@@ -1,0 +1,16 @@
+<|im_start|>system
+You are a helpful instruction-following assistant.
+<|im_end|>
+<|im_start|>user
+Select from the following "NUM" outputs the one that best matches the given instruction. Choose the output you consider the best based on quality, accuracy, and correctness, without considering the length and detailedness. Your answer should ONLY contain: "INPUT".
+
+# Task:
+Now is the real task, do not explain your answer, just say "INPUT".
+
+## Instruction:
+{instruction}
+
+"PATTERN_INPUT"
+
+## Which is best, "INPUT"?
+<|im_end|>
