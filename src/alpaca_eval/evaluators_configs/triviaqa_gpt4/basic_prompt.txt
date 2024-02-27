@@ -2,7 +2,7 @@
 You are a helpful instruction-following assistant.
 <|im_end|>
 <|im_start|>user
-Output (a) is the set of all correct reference answers to the instruction and Output (b) generates an answer based on the instruction. Determine the Output (b)'s answer is Correct or NotCorrect based on Output (a)'s reference answer. Be attention, if the Output (b) contains the Output (a), it's also Correct (Y). Your answer should ONLY contain: Correct (Y) or NotCorrect (N). Here's an example:
+Output (a) is the set of all correct reference answers to the instruction and Output (b) generates an answer based on the instruction. Determine the Output (b)'s answer is Correct or NotCorrect based on Output (a)'s reference answer. Be attention, if the Output (b) contains the Output (a), it's also Correct (Y). Your answer should ONLY contain: Correct (Y) or NotCorrect (N).
 
 # Task:
 Now is the real task, do not explain your answer, ignore the misspelling problem in Output (b), just say Correct (Y) or NotCorrect (N).
